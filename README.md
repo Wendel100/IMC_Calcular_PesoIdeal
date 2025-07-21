@@ -1,3 +1,3 @@
 # PesoIdeal
-# o projeto ainda esta em desevolvimento, portanto a bugs
-# Usar virgula na hora de colocar o "peso", e "altura".
+# Este projeto ainda está em desenvolvimento, portanto, pode conter bugs.
+# Use vírgula para inserir os valores de "peso" e "altura" (ex: 70,5).
