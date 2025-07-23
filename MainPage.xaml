@@ -16,7 +16,7 @@
             Spacing="5">
             <Image
                 Source="logo2.png"
-                HeightRequest="180"
+                HeightRequest="200"
                 Aspect="AspectFit"
                         />
             <Label 
@@ -28,18 +28,23 @@ TextColor="White"
 HorizontalOptions="Center"
 SemanticProperties.HeadingLevel="Level2"
 SemanticProperties.Description="em desenvolvimento" />
+            <Label Text="Digite o peso (em gramas):" FontSize="18"
+                   HorizontalOptions="Center"/>
             <Entry 
-                x:Name="number1" 
-                Placeholder="Peso em kg (ex: 55,5)" 
+                x:Name="PesoEntry" 
+                TextChanged="OnPesoTextChanged"
+                Placeholder="00.0" 
                 PlaceholderColor="White"
                 Keyboard="Numeric"
                 HorizontalOptions="Center"
                 Margin="0,5"
                 />
-
+            <Label Text="Digite a altura (em cm):" FontSize="18"
+                   HorizontalOptions="Center"/>
             <Entry 
-                x:Name="number2" 
-                Placeholder="Altura em m (ex: 1,50)" 
+                x:Name="AlturaEntry"
+                TextChanged="OnAlturaTextChanged"
+                Placeholder="0.00" 
                 PlaceholderColor="White"
                 Keyboard="Numeric"
                 HorizontalOptions="Center"

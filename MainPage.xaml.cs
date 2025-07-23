@@ -1,16 +1,62 @@
 ﻿namespace PesoIseal
 {
     using Microsoft.Maui.Controls;
+    using System.Globalization;
+
     public partial class MainPage : ContentPage
     {
+        private bool _formatandoAltura = false;
+        private bool _formatandoPeso = false;
         public MainPage()
         {
             InitializeComponent();
         }
+        private void OnAlturaTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (_formatandoAltura) return;
+            _formatandoAltura = true;
+
+            var entry = (Entry)sender;
+            var texto = new string(entry.Text.Where(char.IsDigit).ToArray());
+
+            if (double.TryParse(texto, out double alturaCm))
+            {
+                double alturaMetros = alturaCm / 100; // 170 cm → 1.70 m
+                entry.Text = alturaMetros.ToString("N2", CultureInfo.CurrentCulture); // 2 casas decimais
+            }
+            else
+            {
+                entry.Text = "";
+            }
+
+            _formatandoAltura = false;
+        }
+
+        // PESO: 705 → 70,5 kg
+        private void OnPesoTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (_formatandoPeso) return;
+            _formatandoPeso = true;
+
+            var entry = (Entry)sender;
+            var texto = new string(entry.Text.Where(char.IsDigit).ToArray());
+
+            if (double.TryParse(texto, out double pesoGramas))
+            {
+                double pesoKg = pesoGramas / 10; // 705 → 70.5
+                entry.Text = pesoKg.ToString("N1", CultureInfo.CurrentCulture); // 1 casa decimal
+            }
+            else
+            {
+                entry.Text = "";
+            }
+
+            _formatandoPeso = false;
+        }
         private async void OnCounterClickedAsync(object sender, EventArgs e)
         {
-            double peso = double.Parse(number1.Text);
-            double altura = double.Parse(number2.Text);
+            double peso = double.Parse(PesoEntry.Text);
+            double altura = double.Parse(AlturaEntry.Text);
             double imc = peso / (altura * altura);
 
             if (imc > 0 && imc <= 17)
@@ -61,12 +107,10 @@
 
         private void limpar_Clicked(object sender, EventArgs e)
         {
-            number1.Text = "";
-            number2.Text = "";
+            AlturaEntry.Text = "";
+            PesoEntry.Text = "";
             teste.Text = "";
 
         }
     }
 }
-
-
