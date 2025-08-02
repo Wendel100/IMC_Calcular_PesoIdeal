@@ -5,20 +5,15 @@
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#8A2BE2" Offset="0.0" />
-            <!-- Roxo -->
-            <GradientStop Color="Black" Offset="1.0" />
-            <!-- Azul escuro -->
+            <GradientStop Color="#0A8082" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
     <ScrollView>
         <VerticalStackLayout
-            Padding="5"
+            Padding="2"
             Spacing="5">
             <Image
-                Source="logo2.png"
-                HeightRequest="200"
-                Aspect="AspectFit"
-                        />
+                Source="logo2.png" MaximumHeightRequest="200" MaximumWidthRequest="200" MinimumHeightRequest="0" MinimumWidthRequest="0"/>
             <Label 
 x:Name="teste"
 Text=""
@@ -55,14 +50,15 @@ SemanticProperties.Description="em desenvolvimento" />
                 FontFamily="Roboto"
                 Text="Calcular" 
                 Clicked="OnCounterClickedAsync"
-                HorizontalOptions="Center" WidthRequest="80" />
+                HorizontalOptions="Center" WidthRequest="90"
+                BorderColor="#CACACA" BorderWidth="3"/>
 
             <Button x:Name="limpar"
              Text="Limpar"
              FontFamily="Roboto"
-             HorizontalOptions="Center" WidthRequest="80"
+             HorizontalOptions="Center" WidthRequest="90"
+             BorderColor="#CACACA" BorderWidth="3"
              Clicked="limpar_Clicked" />
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
