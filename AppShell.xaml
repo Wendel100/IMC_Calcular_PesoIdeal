@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PesoIseal"
     Shell.FlyoutBehavior="Disabled"
-    Title="Peso Ideal" BackgroundColor="#212121"
+    Title="Peso Ideal"
     >
 
     <ShellContent

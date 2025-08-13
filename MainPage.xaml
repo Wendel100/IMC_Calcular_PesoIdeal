@@ -11,9 +11,9 @@
     <ScrollView>
         <VerticalStackLayout
             Padding="2"
-            Spacing="5">
+            Spacing="2">
             <Image
-                Source="logo2.png" MaximumHeightRequest="200" MaximumWidthRequest="200" MinimumHeightRequest="0" MinimumWidthRequest="0"/>
+                Source="logo3.png" WidthRequest="300" HeightRequest="300"/>
             <Label 
 x:Name="teste"
 Text=""
@@ -27,7 +27,7 @@ SemanticProperties.Description="em desenvolvimento" />
                    HorizontalOptions="Center"/>
             <Entry 
                 x:Name="PesoEntry" 
-                TextChanged="OnPesoTextChanged"
+               
                 Placeholder="00.0" 
                 PlaceholderColor="White"
                 Keyboard="Numeric"
@@ -38,7 +38,7 @@ SemanticProperties.Description="em desenvolvimento" />
                    HorizontalOptions="Center"/>
             <Entry 
                 x:Name="AlturaEntry"
-                TextChanged="OnAlturaTextChanged"
+                
                 Placeholder="0.00" 
                 PlaceholderColor="White"
                 Keyboard="Numeric"
